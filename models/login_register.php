@@ -215,7 +215,6 @@ class Register extends Database
         $result = '';
         $passwordRegex = "/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,18}$/";
 
-
         if (!preg_match($passwordRegex, $this->password)) {
             $result = false;
         } else {
@@ -230,7 +229,7 @@ class Register extends Database
         $result = '';
 
         $sql = "INSERT INTO users (name, email, password)";
-        $sql .= "VALUES ('?', '?', '?')";
+        $sql .= "VALUES (?, ?, ?)";
         $stmt = $this->connect()->prepare($sql);
         $newPassword = password_hash($this->password, PASSWORD_DEFAULT);
         $stmt->execute([$this->name, $this->email, $newPassword]);

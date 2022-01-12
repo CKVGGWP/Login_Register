@@ -69,9 +69,10 @@
                         </table>
                     </div>
                 </div>
-
-            <?php endif ?>
         </div>
         <div class="col-md-3 col-lg-3"></div>
     </main>
+
+<?php endif ?>
+
 </body>
